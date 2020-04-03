@@ -1,8 +1,8 @@
-FROM golang:1.7.1-alpine
-MAINTAINER hteen <i@hteen.cn>
+# 指定基础镜像
+FROM centos:7
 
-RUN apk add --no-cache git make openssl
-
+RUN yum install -y epel-release git make golang openssl 
+  
 RUN git clone https://github.com/tutumcloud/ngrok.git /ngrok
 
 ADD *.sh /
@@ -17,4 +17,4 @@ EXPOSE 4443
 EXPOSE 80
 EXPOSE 443
 
-CMD /bin/sh
+CMD /bin/bash
