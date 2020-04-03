@@ -3,7 +3,7 @@ FROM centos:7
 
 RUN yum install -y epel-release \
   && yum install -y golang \
-  && yum install -y git make openssl \
+  && yum install -y git make openssl
   
 RUN git clone https://github.com/tutumcloud/ngrok.git /ngrok
 
