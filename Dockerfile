@@ -1,7 +1,9 @@
 # 指定基础镜像
 FROM centos:7
 
-RUN yum install -y epel-release git make golang openssl 
+RUN yum install -y epel-release \
+  && yum install -y golang \
+  && yum install -y git make openssl \
   
 RUN git clone https://github.com/tutumcloud/ngrok.git /ngrok
 
